@@ -41,11 +41,15 @@ class AdminPanelProvider extends PanelProvider
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
-                Pages\Dashboard::class,
+                Pages\\Dashboard::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                Widgets\AccountWidget::class,
+                Widgets\\AccountWidget::class,
+                \\App\\Filament\\Widgets\\AnalyticsStatsWidget::class,
+                \\App\\Filament\\Widgets\\VisitorChartWidget::class,
+                \\App\\Filament\\Widgets\\RealtimeWidget::class,
+                \\App\\Filament\\Widgets\\TopPagesWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
